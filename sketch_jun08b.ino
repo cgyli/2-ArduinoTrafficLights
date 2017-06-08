@@ -15,16 +15,16 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   changeLights();
-  if(digitalRead(button) == (HIGH)){
-       pedestrianFirst();
-       delay(8000);
-  }
   delay(8000);
    }
 
 void changeLights(){
   for (int i=0; i<10; i++){
-    
+    if(digitalRead(button) == (HIGH)){
+       pedestrianFirst();
+       delay(8000);
+       i=0;
+    }
     // flashing green lights on
     digitalWrite(green, HIGH);
     digitalWrite(yellow, LOW);
@@ -51,15 +51,15 @@ void pedestrianFirst(){
     digitalWrite(green, HIGH);
     digitalWrite(yellow, LOW);
     digitalWrite(red, LOW);
-    delay(1000);
+    delay(500);
     digitalWrite(green, LOW);
-    delay(1000);
+    delay(500);
   }
 
   digitalWrite(green, HIGH);
   digitalWrite(yellow, LOW);
   digitalWrite(red, LOW);
-  delay(3000);
+  delay(5000);
     
   //yellow lights on
   digitalWrite(green, LOW);
