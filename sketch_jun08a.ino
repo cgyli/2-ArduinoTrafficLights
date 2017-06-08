@@ -1,3 +1,4 @@
+//define pins
 int red = 10;
 int yellow = 9;
 int green = 8;
@@ -11,8 +12,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  changeLights();
-  delay(15000);
+  changeLights(); //traffic light function
+  delay(15000); //red light on duration
 }
 
 void changeLights(){
